@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MoustacheApp.Models.MoQuizDetail>
+
+@{
+    ViewData["Title"] = "List of Quizzies";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="canister">
+    @if (User.IsInRole("L2") || User.IsInRole("L3") || User.IsInRole("L5"))
+    {
+        <p>
+            <a asp-action="Create">Create</a>
+        </p>
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                @if (User.IsInRole("L2") || User.IsInRole("L3") || User.IsInRole("L5"))
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PreviousId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Current)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CommonId)
+                    </th>
+                }
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Information)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                @if (User.IsInRole("L2") || User.IsInRole("L3") || User.IsInRole("L5"))
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Published)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Played)
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @if (User.IsInRole("L0") || User.IsInRole("L1"))
+                    {
+                        <td>
+                            <a asp-action="Play" asp-route-id="@item.Id">Play</a> |
+                            <a asp-action="Result" asp-route-id="@item.Id">Result</a>
+                        </td>
+                    }
+                    @if (User.IsInRole("L2") || User.IsInRole("L3") || User.IsInRole("L5"))
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PreviousId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Current)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CommonId)
+                        </td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Information)*@
+                        @item.Information.Truncate(40, true)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    @if (User.IsInRole("L2") || User.IsInRole("L3") || User.IsInRole("L5"))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Published)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Played)
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,139 @@
+﻿@model MoustacheApp.Models.MoQuizDetail
+
+@{
+    ViewData["Title"] = "Edit Quiz";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="canister">
+    <div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label col-md-1"></label>
+                <div class="col-md-4">
+                    <input asp-for="Id" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreviousId" class="control-label col-md-1"></label>
+                <div class="col-md-4">
+                    <input asp-for="PreviousId" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="PreviousId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Current" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="Current" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="Current" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommonId" class="control-label col-md-1"></label>
+                <div class="col-md-4">
+                    <input asp-for="CommonId" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="CommonId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label col-md-1"></label>
+                <div class="col-md-4">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information" class="control-label col-md-1"></label>
+                <div class="col-md-7">
+                    <textarea asp-for="Information" class="form-control"></textarea>
+                    @*<input asp-for="Information" class="form-control" />*@
+                    <span asp-validation-for="Information" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="Type" class="form-control" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Published" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="Published" class="form-control" />
+                    <span asp-validation-for="Published" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attempts" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="Attempts" class="form-control" />
+                    <span asp-validation-for="Attempts" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Played" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="Played" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="Played" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomise" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="Randomise" class="form-control" />
+                    <span asp-validation-for="Randomise" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestToPlay" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="QuestToPlay" class="form-control" />
+                    <span asp-validation-for="QuestToPlay" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizStart" class="control-label col-md-1"></label>
+                <div class="col-md-2">
+                    <input asp-for="QuizStart" class="form-control" />
+                    <span asp-validation-for="QuizStart" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeLimit" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="TimeLimit" class="form-control" />
+                    <span asp-validation-for="TimeLimit" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResultLocked" class="control-label col-md-1"></label>
+                <div class="col-md-1">
+                    <input asp-for="ResultLocked" class="form-control" />
+                    <span asp-validation-for="ResultLocked" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LockedUntil" class="control-label col-md-1"></label>
+                <div class="col-md-2">
+                    <input asp-for="LockedUntil" class="form-control" />
+                    <span asp-validation-for="LockedUntil" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

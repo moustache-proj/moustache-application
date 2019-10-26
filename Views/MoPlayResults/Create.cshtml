@@ -1,0 +1,57 @@
+﻿@model MoustacheApp.Models.MoPlayResult
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MoPlayResult</h4>
+<hr />
+<div class="canister">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QuizId" class="control-label"></label>
+                <select asp-for="QuizId" class ="form-control" asp-items="ViewBag.QuizId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayedDt" class="control-label"></label>
+                <input asp-for="PlayedDt" class="form-control" />
+                <span asp-validation-for="PlayedDt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubmittedDt" class="control-label"></label>
+                <input asp-for="SubmittedDt" class="form-control" />
+                <span asp-validation-for="SubmittedDt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Result" class="control-label"></label>
+                <input asp-for="Result" class="form-control" />
+                <span asp-validation-for="Result" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResultAdjusted" class="control-label"></label>
+                <input asp-for="ResultAdjusted" class="form-control" />
+                <span asp-validation-for="ResultAdjusted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback" class="control-label"></label>
+                <input asp-for="Feedback" class="form-control" />
+                <span asp-validation-for="Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

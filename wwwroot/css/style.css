@@ -1,0 +1,533 @@
+:root{
+    background-color: #ffffff;
+    font-size: 100%;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*  MAKES HEADER FULL WIDTH */
+body {
+    margin: 0 0 100px;
+    background-color: #ffffff;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+   
+
+/* NAV BAR */
+.navbar {
+    display: flex;
+    }
+  
+  .column1 {
+    flex: 95%;
+    padding: 15px;
+    height: 45px; 
+    background: #11144c;
+  }
+  .column2 {
+    flex: 5%;
+    padding: 15px;
+    height: 45px; 
+    background: #3a9679;
+  }
+
+
+/* TITLE OF PAGE */
+h1{
+    font-size: 3rem;
+    color: black;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+/* SUB-HEADING OF PAGE */
+h2{
+    text-align: right;
+    font-size: 1.5rem;
+    color: black;
+    display: inline-block;
+}
+/* TITLE OF QUESTION */
+h3{
+    font-size: 1rem;
+    color: grey;
+    display: inline-block;
+}
+
+
+/* TITLE CONTAINER */
+.title {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.title h2{
+    padding-left: 0%
+}
+
+
+/* SEARCH BUTTON */
+.search {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    background-image: url("img/search.png") no-repeat no-repeat;
+    text-align: left;
+    cursor: pointer;
+  }
+/* SEARCH BAR */
+.title input[type=text]{
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a0a0a0;
+    margin: 8px;
+    font-size: 20px;
+    width: 400px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+/* INPUT FIELD FOR NEW_QUIZ/EDIT_QUIZ.HTML */
+.putin {
+    margin-left: 10px;
+    padding: 5px;
+    display: inline-block;
+    font-size: 15px;
+    width: 400px;
+    
+}
+/* PUTIN INPUT STYLE */
+  .putin input[type=text]{
+    float: center;
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a0a0a0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    margin-left: 16px;
+    font-size: 20px;
+    
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+/* NAV BAR ICON LOGO POSITION */
+.homeicon {
+    border: none;
+    padding: 10px;
+    float: left;
+    width: 15%;
+    position: static;
+    width: 160.875px !important;
+    height: 27.0625px !important;
+}
+
+/* NAV BAR ACCOUNT ICON POSITION*/
+.profileicon{
+    float: right;
+    width: 4%;
+    position: static;
+    margin-right: 7px;
+    margin-left: 5px;
+    top: 10px;
+    
+    width: 45px !important;
+    height: 45px !important;
+    cursor: pointer;
+}
+
+/* BUTTON STYLE */
+.button  {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    background: whitesmoke;
+    cursor: pointer;
+}
+
+/* BUTTON STYLE FOR HOME PAGE */
+.button_home  {
+    margin: 5px;
+    float: right;
+    padding: 4.5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* BUTTON STYLE FOR TABLES (LEFT) */
+.button_picture  {
+    padding: 4.5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_picture, input[type=file] {      
+    padding: 2px 8px 3px;
+}
+
+/* ADD & SUBTRACT BUTTONS */
+.add_button  {
+    margin: 3px;
+    padding: 9px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sub_button  {
+    margin: 3px;
+    padding: 9px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* BUTTON STYLE FOR TABLES (RIGHT) */
+.button_right {
+    padding: 8px;
+    margin: 8px;
+    margin-right: 0px;
+    border-radius: 8px;
+    background: whitesmoke;
+    float: right;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* BUTTON STYLE FOR "SAVED"*/
+.button_save  {
+    margin-right: 20px;
+    margin-top: 10px;
+    float: right;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fafafa;
+}
+/* button_save STAYS ACTIVE AFTER CLICK 
+but it's not working :// */
+.button_save:active {
+    background-color: #A0A0A0;
+}
+
+/* LOGOUT BUTTON */
+.btn, input[type=submit] {
+    font-size: 1rem;
+    padding: 5px;
+    width: 10rem;
+    text-align: center;
+    border: 0.1rem solid #3a9679;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: #3a9679;
+}
+
+
+/* TABLE STYLE */
+table {
+    width: 95%;
+    /* margin-left:2.5%;  */
+    padding-left: 50px;
+    /* padding-right: 20px; */
+  }
+
+th {
+    text-align: center;
+    padding: 10px;
+    background:	#A0A0A0;
+}
+
+td {
+    text-align: left;
+    padding: 10px;
+    background: #F0F0F0;
+    
+}
+/* HOVER ON TABLE COLOR */
+td:hover {
+    background-color: #B0B0B0;
+}
+
+
+/* CONTAINER FOR NEW QUESTION */
+.new_question{
+    margin-left: 50px;
+    margin-right: 0px;
+    padding-left: 30px;
+    width: 70%;
+    background: #ddd;
+}
+/* INPUT STYLE FOR new_question class */
+.new_question input[type=text]{
+    float: center;
+    padding: 6px;
+    border: 1px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    width: 500px;
+}
+
+
+/* CONTAINER FOR RIGHT SIDE FUNCTIONS */
+.right{
+    font-size: 15px;
+    float: right;
+    text-align: right;
+    padding-right: 45px;
+    width: 30%;
+}
+
+
+/* PARTICPANT DETAILS ON REVIEW_RESULTS.HTML */
+.parti_deets{
+    font-size: 15px;
+    float: right;
+    text-align: left;
+    padding-right: 45px;
+    width: 30%;
+}
+
+
+/* DEFAULT CONTAINER */
+.canister {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* TEXTAREA FOR REVIEW_RESULTS.HTML */
+textarea {
+    margin: 10px;
+    margin-bottom: 0px;
+    padding:10px;
+}
+
+/* INPUT TAG STYLE */
+input {
+    margin: 5px;
+    padding: 5px;  
+}
+
+/* HIDES IFRAME ON new/edit_quiz.html*/
+.iframe_style {
+    display: none !important;
+}
+
+/* UPLOADED IMAGE STYLE */
+.img_style {
+    
+    max-width: 200px; 
+}
+
+/* FOOTER OF EVERY PAGE */
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    
+    padding: 15px;
+    background: #11144c;
+    text-align: center;
+    }
+
+/* CHECKBOX STYLE */
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ADDED CSS FROM BOOTSTRAP */
+@media (min-width: 768px) {
+    .col-md {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .col-md-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .col-md-1 {
+        -ms-flex: 0 0 8.333333%;
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+
+    .col-md-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+
+    .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-md-7 {
+        -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+    }
+
+    .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .col-md-10 {
+        -ms-flex: 0 0 83.333333%;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+
+    .col-md-11 {
+        -ms-flex: 0 0 91.666667%;
+        flex: 0 0 91.666667%;
+        max-width: 91.666667%;
+    }
+
+    .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-danger hr {
+  border-top-color: #f1b0b7;
+}
+
+.alert-danger .alert-link {
+  color: #491217;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-warning hr {
+  border-top-color: #ffe8a1;
+}
+
+.alert-warning .alert-link {
+  color: #533f03;
+}
+
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}

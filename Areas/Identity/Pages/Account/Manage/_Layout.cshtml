@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+}
+
+@* Highlighted: this page is directly copied from moustache ver. 12.09. *@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Moustache</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    </environment>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+
+    @*NAV BAR*@
+    <div class="navbar">
+        <div class="column1">
+            <a asp-area="Home" asp-controller="Home" asp-action="Index">
+                <img src="~/images/nav_logo.png" class="homeicon">
+            </a>
+        </div>
+        <div class="column2">
+            <partial name="_LoginPartial" />
+            @if (User.IsInRole("L2") || User.IsInRole("L3") || User.IsInRole("L5"))
+            {
+                <a class="nav-link text-dark" asp-area="" asp-controller="MoQuizDetails" asp-action="Index">Quizzes</a>
+            }
+
+            @if (User.IsInRole("L3") || User.IsInRole("L4") || User.IsInRole("L5"))
+            {
+                <a class="nav-link text-dark" asp-area="" asp-controller="AppUsers" asp-action="Index">Users</a>
+            }
+
+            @if (User.IsInRole("L5"))
+            {
+                <a class="nav-link text-dark" asp-area="" asp-controller="AppRoles" asp-action="Index">Roles</a>
+            }
+        </div>
+    </div>
+
+    <div class="canister">
+        @RenderBody()
+
+        @* FOOTER *@
+        <footer class="footer">
+            <small>
+                &copy; 2019 Moustache | For any issues, email us at enquiry@moustache.com. |
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </small>
+        </footer>
+    </div>
+
+    @section Scripts {
+        @RenderSection("Scripts", required: false)
+    }
+
+</body>
+</html>

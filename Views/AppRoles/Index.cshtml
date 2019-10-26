@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MoustacheApp.Models.AppRole>
+
+@{
+    ViewData["Title"] = "List of Roles";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="canister">
+    <p>
+        <a asp-action="Create">Create</a>
+    </p>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                    <td style="width: 50%">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Description)*@
+                        @item.Description.Truncate(50, true)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
